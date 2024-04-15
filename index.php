@@ -50,7 +50,35 @@ $hotels = [
 } */
 
 
+
+#BONUS
+#Empty array
+$hotels_printed = [];
+
+#Variable with "select value"
+$need_a_park = "$_GET[yes_no]";
+#Let's see it
+#var_dump($need_a_park);
+
+#If my select value is 1(Yes)
+if ($need_a_park == 1) {
+    #Loop in my hotels array 
+    foreach ($hotels as $hotel) {
+        #If the hotel has a park 
+        if ($hotel["parking"]) {
+            #push it in $hotels_printed
+            array_push($hotels_printed, $hotel);
+        }
+    }
+    #If my select value is 2(No) or None, my $hotels_printed had the same value of $hotels
+} else {
+    $hotels_printed = $hotels;
+}
+#var_dump($hotels_printed);
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +94,18 @@ $hotels = [
 
 <body>
     <div class="container">
+        <!-- Form with select input-->
+        <form class="input-group my-3" method="get">
+            <button class="btn btn-outline-secondary" type="submit">Send</button>
+            <select class="form-select" name="yes_no">
+                <option selected>
+                    Is parking important to you?</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
+        </form>
+
+        <!--Table with my hotels-->
         <table class="table table-primary mt-auto border border-1">
             <thead>
                 <tr>
@@ -78,7 +118,7 @@ $hotels = [
             </thead>
             <tbody>
                 <!--Loop with foreach-->
-                <?php foreach ($hotels as $key => $hotel): ?>
+                <?php foreach ($hotels_printed as $key => $hotel): ?>
                     <tr>
                         <td scope="row"><?php echo $hotel["name"] ?></td>
                         <td><?php echo $hotel["description"] ?></td>
