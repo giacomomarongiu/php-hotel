@@ -84,19 +84,33 @@ if ($need_a_park == 1) {
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Hotels</title>
+    <script src="https://kit.fontawesome.com/3a46370e2f.js" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 
 <body>
+    <header>
+        <nav class="navbar bg-primary">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand fw-bold" href="#">
+                    Hotels <i class="fa-solid fa-house-chimney-user"></i>
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
     <div class="container">
         <!-- Form with select input-->
         <form class="input-group my-3" method="get">
-            <button class="btn btn-outline-secondary" type="submit">Send</button>
+            <button class="btn btn-outline-primary" type="submit">Send</button>
             <select class="form-select" name="yes_no">
                 <option selected>
                     Is parking important to you?</option>
@@ -106,8 +120,8 @@ if ($need_a_park == 1) {
         </form>
 
         <!--Table with my hotels-->
-        <table class="table table-primary mt-auto border border-1">
-            <thead>
+        <table class="table table-hover table-primary mt-auto border border-primary ">
+            <thead class="text-primary ">
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
