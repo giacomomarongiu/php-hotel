@@ -1,5 +1,6 @@
 <?php
 
+# My array
 $hotels = [
 
     [
@@ -40,6 +41,33 @@ $hotels = [
 
 ];
 
-var_dump($hotels)
+# Let's see my array
+var_dump($hotels);
+
+#Loop in my array with foeach
+/* foreach ($hotels as $hotel) {
+    echo $hotel["name"] . " - " . $hotel["description"] . " | " . $hotel["parking"] . " - " . $hotel["vote"] . " - " . $hotel["distance_to_center"] . "<br>";
+} */
+
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Hotels</title>
+</head>
+
+<body>
+    <div class="container">
+        <div><?php foreach ($hotels as $hotel) {
+            echo $hotel["name"] . " - " . $hotel["description"] . " | " . $hotel["parking"] . " - " . $hotel["vote"] . " - " . $hotel["distance_to_center"] . "<br>";
+        } ?></div>
+    </div>
+
+</body>
+
+</html>
